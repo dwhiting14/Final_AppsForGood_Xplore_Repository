@@ -5,7 +5,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.Switch;
 import android.widget.Toast;
+import android.widget.SeekBar;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -22,10 +26,11 @@ import com.example.appforgood.databinding.ActivityMainBinding;
 import java.util.ArrayList;
 import java.util.Random;
 
-        public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    Switch homeswitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,7 @@ import java.util.Random;
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null)
                         .setAnchorView(R.id.fab).show();
+
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
@@ -48,7 +54,7 @@ import java.util.Random;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -57,18 +63,41 @@ import java.util.Random;
 
 
 
+        //Created arraylist of activity objects
+        ArrayList<Activity> activities = new ArrayList<>();
 
-        ArrayList<ArrayList> categories = new ArrayList<>();
-        ArrayList<String> nature = new ArrayList<>();
-        ArrayList<String> music = new ArrayList<>();
-        ArrayList<String> sports = new ArrayList<>();
+        //constructs and adds new objects of the activity class
+        activities.add(new Activity("Go for a hike", 0, false, "nature"));
+        activities.add(new Activity("Have a picnic in the park", 6, false, "nature"));
+        activities.add(new Activity("Go birdwatching", 0, false, "nature"));
+        activities.add(new Activity("Listen to music on Spotify", 0, true, "music"));
+        activities.add(new Activity("Order pizza", 12, true, "food"));
+        activities.add(new Activity("Play basketball", 0, false, "sports"));
+        //nature.add("Go for a hike"); nature.add("Have a picnic in the park"); nature.add("Go birdwatching");
+        //music.add("Go to a concert"); music.add("Listen to music on spotify"); music.add("Sing karaoke with friends");
+        //sports.add("Play basketball"); sports.add("Play ping pong"); sports.add("Play 2k");
+        //food.add("Go out to a nice restaurant"); food.add("Order pizza"); food.add("Bake cookies");
 
-        categories.add(nature);
-        categories.add(music);
-        categories.add(nature);
-        nature.add("Go for a hike"); nature.add("Have a picnic in the park"); nature.add("Go birdwatching");
-        music.add("Go to a concert"); music.add("Listen to music on spotify"); music.add("Sing karaoke with friends");
-        sports.add("Play basketball"); sports.add("Play ping pong"); sports.add("Play 2k");
+
+        homeswitch = (Switch) findViewById(R.id.switch1);
+
+        SeekBar priceRange = (SeekBar)findViewById(R.id.priceRange);
+        TextView displayPrice = (TextView)findViewById(R.id.displayPrice);
+
+        int maxPrice= priceRange.getProgress(); //DOES NOT WORK
+        priceRange.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                displayPrice.setText("Max Price = $" + String.valueOf(progress));
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {}
+        });
+
+
+
 
 
         //Find button
@@ -80,14 +109,30 @@ import java.util.Random;
                 Log.i("firstapp", "CLICKED - GIVE IDEA");
 
                 Random r = new Random();
-                int catIndex = r.nextInt(categories.size());
-                ArrayList<String> selectedCat = new ArrayList<>();
-                selectedCat = categories.get(catIndex);
+                boolean wantAtHome = homeswitch.isChecked();
+                Boolean checkAct = false;
+                int activitiesIndex = 0;
 
-                int actIndex = r.nextInt(selectedCat.size());
-                String activity = selectedCat.get(actIndex);
+                //Check against all the user inputted preferences
+                //Add more && to the if statement under the while to check mor preferences one we have the buttons
+                while (!checkAct){
+                    activitiesIndex = r.nextInt(activities.size());
+                    int mPrice= priceRange.getProgress();
+                    if (activities.get(activitiesIndex).getAtHome() == wantAtHome
+                        && activities.get(activitiesIndex).getCost() <= mPrice){ //DOES NOT WORK
+                        checkAct = true;
+                    }
+                }
+                Toast.makeText(getApplicationContext(),"Im here", Toast.LENGTH_LONG).show();
 
-                Toast.makeText(MainActivity.this, activity, Toast.LENGTH_LONG).show();
+
+                TextView display = findViewById(R.id.text_home);
+                String displayAtHome = "This activity is not at home";
+                if (activities.get(activitiesIndex).getAtHome()){
+                    displayAtHome = "This activity is at home";
+                }
+                display.setText(activities.get(activitiesIndex).getName() + "\n" + "Price = $" + activities.get(activitiesIndex).getCost() + "\n" + displayAtHome + "\n" + "Category = " + activities.get(activitiesIndex).getCategory());
+
             }
         });
 
