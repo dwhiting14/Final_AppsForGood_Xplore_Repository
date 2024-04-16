@@ -49,19 +49,41 @@ public class HomeFragment extends Fragment {
         activities.add(new Activity("Go for a hike", 0, false, "nature"));
         activities.add(new Activity("Have a picnic in the park", 6, false, "nature"));
         activities.add(new Activity("Go birdwatching", 0, false, "nature"));
+        activities.add(new Activity("Go for a hike along a local trail/mountain", 0, false, "nature"));
+        activities.add(new Activity("Plant a flower", 10, true, "nature"));
+        activities.add(new Activity("Draw a scenic image from outside",0, true,"nature"));
+        activities.add(new Activity("Make your own nature portfolio",150, false,"nature"));
+        activities.add(new Activity("Plant a new houseplant, such as a money tree!",15,true,"nature"));
+        activities.add(new Activity("Skip rocks at a local pond/lake",0, false,"nature"));
+        activities.add(new Activity("Go to the beach",0,false,"nature"));
+
 
         activities.add(new Activity("Listen to music on Spotify", 0, true, "music"));
         activities.add(new Activity("Go to a concert", 100, false, "music"));
         activities.add(new Activity("Play an instrument",0,true,"music"));
         activities.add(new Activity("Sing karaoke with friends",0,true,"music"));
+        activities.add(new Activity("Write your own song",0, true,"music"));
+        activities.add(new Activity("Go to a concert at a reduced price by powering the stage on a bike",50,false,"music"));
+        activities.add(new Activity("Try listening to music in other languages",0,true,"music"));
+        activities.add(new Activity("Learn a new instrument",50,false,"music"));
+        activities.add(new Activity("Try combining everyday songs to create music",0	,true,"music"));
+        activities.add(new Activity("Discover your favorite classical song",0,true,"music"));
+        activities.add(new Activity("Try listening to a different music genre",0,true,"music"));
 
         activities.add(new Activity("Order pizza", 12, true, "food"));
         activities.add(new Activity("Bake Cookies", 0, true, "food"));
-        activities.add(new Activity("Go out to a nice restaurant", 20, true, "food"));
+        activities.add(new Activity("Go out to a nice restaurant", 20, false, "food"));
+        activities.add(new Activity("Doordash your favorite fast food",25,true,"food"));
+        activities.add(new Activity("Find your favorite seasonal dish",12,false,"food"));
+        activities.add(new Activity("Learn how to bake",15,true,"food"));
+
 
         activities.add(new Activity("Play basketball", 0, false, "sports"));
         activities.add(new Activity("Play a sports video game", 0, true, "sports"));
-
+        activities.add(new Activity("Go outside and play a game of cornhole",0,true,"sports"));
+        activities.add(new Activity("Go to the beach for an exciting game of beach volleyball",0,false,"sports"));
+        activities.add(new Activity("Play a game of pickleball with your parents",0,false,"sports"));
+        activities.add(new Activity("Phone a friend and meet at a local tennis court to rally",0	,false,	"sports"));
 
         ArrayList preferences = new ArrayList();
 
@@ -147,12 +169,6 @@ public class HomeFragment extends Fragment {
 
             }
         });
-
-
-
-
-
-
 
         return root;
 
