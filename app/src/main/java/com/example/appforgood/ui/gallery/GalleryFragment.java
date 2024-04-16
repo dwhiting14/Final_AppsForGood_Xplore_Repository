@@ -39,6 +39,9 @@ public class GalleryFragment extends Fragment {
         CheckBox musicCheck = (CheckBox) root.findViewById(R.id.musicCheck);
         CheckBox foodCheck = (CheckBox) root.findViewById(R.id.foodCheck);
         CheckBox sportsCheck = (CheckBox) root.findViewById(R.id.sportsCheck);
+        CheckBox moviesCheck = (CheckBox) root.findViewById(R.id.moviesCheck);
+        CheckBox clothingCheck = (CheckBox) root.findViewById(R.id.clothingCheck);
+
 
         SharedPreferences sp = getActivity().getSharedPreferences("UserPref", Context.MODE_PRIVATE);
 
@@ -74,6 +77,24 @@ public class GalleryFragment extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putBoolean("sports",isChecked);
+                editor.apply();
+            }
+        });
+
+        moviesCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putBoolean("movies",isChecked);
+                editor.apply();
+            }
+        });
+
+        clothingCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putBoolean("clothing",isChecked);
                 editor.apply();
             }
         });

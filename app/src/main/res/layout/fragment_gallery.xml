@@ -64,4 +64,24 @@
         android:text="Sports"
         app:layout_constraintStart_toEndOf="@+id/foodCheck"
         app:layout_constraintTop_toBottomOf="@+id/musicCheck" />
+
+    <CheckBox
+        android:id="@+id/moviesCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="116dp"
+        android:text="Movies"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodCheck" />
+
+    <CheckBox
+        android:id="@+id/clothingCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="116dp"
+        android:text="Clothing"
+        app:layout_constraintStart_toEndOf="@+id/moviesCheck"
+        app:layout_constraintTop_toBottomOf="@+id/sportsCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
