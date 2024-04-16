@@ -57,7 +57,6 @@ public class HomeFragment extends Fragment {
         activities.add(new Activity("Skip rocks at a local pond/lake",0, false,"nature"));
         activities.add(new Activity("Go to the beach",0,false,"nature"));
 
-
         activities.add(new Activity("Listen to music on Spotify", 0, true, "music"));
         activities.add(new Activity("Go to a concert", 100, false, "music"));
         activities.add(new Activity("Play an instrument",0,true,"music"));
@@ -77,7 +76,6 @@ public class HomeFragment extends Fragment {
         activities.add(new Activity("Find your favorite seasonal dish",12,false,"food"));
         activities.add(new Activity("Learn how to bake",15,true,"food"));
 
-
         activities.add(new Activity("Play basketball", 0, false, "sports"));
         activities.add(new Activity("Play a sports video game", 0, true, "sports"));
         activities.add(new Activity("Go outside and play a game of cornhole",0,true,"sports"));
@@ -85,8 +83,18 @@ public class HomeFragment extends Fragment {
         activities.add(new Activity("Play a game of pickleball with your parents",0,false,"sports"));
         activities.add(new Activity("Phone a friend and meet at a local tennis court to rally",0	,false,	"sports"));
 
-        ArrayList preferences = new ArrayList();
+        activities.add(new Activity("Watch a movie at a local movie theater with a loved one",15, false,	"movies"));
+        activities.add(new Activity("Rewatch your favorite movie at home",0,true	,"movies"));
+        activities.add(new Activity("Watch '3 Idiots'",0,true,"movies"));
+        activities.add(new Activity("Watch your favorite Series/Trilogy/Saga",0,true,"movies"));
+        activities.add(new Activity("Try out a new show",0,true,"movies"));
 
+        activities.add(new Activity("Go to the mall and shop at your favorite stores",100,false,"clothing"));
+        activities.add(new Activity("Tiedye a shirt",10, false,"clothing"));
+        activities.add(new Activity("Check out Zara for its newest deals",50,true,"clothing"));
+        activities.add(new Activity("Do a fashion show with the clothes from your wardrobe",0,true,"clothing"));
+
+        ArrayList preferences = new ArrayList();
 
 
         //homeswitch = (Switch) findViewById(R.id.switch1);
