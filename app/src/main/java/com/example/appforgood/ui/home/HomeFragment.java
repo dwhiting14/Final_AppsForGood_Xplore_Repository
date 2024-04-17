@@ -45,7 +45,7 @@ public class HomeFragment extends Fragment {
         //Created arraylist of activity objects
         ArrayList<Activity> activities = new ArrayList<>();
 
-        //constructs and adds new objects of the activity class
+        //activity pool - constructs and adds new objects of the activity class
         activities.add(new Activity("Go for a hike", 0, false, "nature"));
         activities.add(new Activity("Have a picnic in the park", 6, false, "nature"));
         activities.add(new Activity("Go birdwatching", 0, false, "nature"));
