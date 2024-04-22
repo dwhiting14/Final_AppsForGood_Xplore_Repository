@@ -1,0 +1,63 @@
+Go for a walk,0,TRUE,nature
+Go birdwatching,0,TRUE,nature
+Have a picnic at the park,6,FALSE,nature
+Go for a hike along a local trail/mountain,0,FALSE,nature
+Plant a flower,10,TRUE,nature
+Draw a scenic image from outside,0,TRUE,nature
+Make your own nature portfolio ,150,FALSE,nature
+"Plant a new houseplant, such as a money tree!",15,TRUE,nature
+Skip rocks at a local pond/lake,0,FALSE,nature
+Go to the beach,0,FALSE,nature
+Listen to music on Spotify,0,TRUE,music
+Go to a concert,100,FALSE,music
+Play an instrument,0,TRUE,music
+Sing karyoke with friends,25,TRUE,music
+Write your own song,0,TRUE,music
+Go to a concert at a reduced price by powering the stage on a bike,50,FALSE,music
+Try listening to music in other languages,0,TRUE,music
+Learn a new instrument,50,FALSE,music
+Try combining everyday songs to create music.,0,TRUE,music
+Discover your favorite classical song ,0,TRUE,music
+Try listening to a different music  genre,0,TRUE,music
+Order pizza,20,TRUE,food
+Bake cookies,15,TRUE,food
+Go out to a nice restaurant,75,FALSE,food
+Doordash your favorite fast food,25,TRUE,food
+Find your favorite seasonal dish,12,FALSE,food
+Learn how to bake,15,TRUE,food
+Play basketball,0,TRUE,sports
+Play a sports video game,60,TRUE,sports
+Go outside and play a game of cornhole,0,TRUE,sports
+Go to the beach for an exciting game of beach volleyball,0,FALSE,sports
+Play a game of pickleball with your parents,0,FALSE,sports
+Phone a friend and meet at a local tennis court to rally,0,FALSE,sports
+Watch a movie at a local movie theater with a loved one,15,FALSE,movies
+Rewatch your favorite movie at home,0,TRUE,movies
+Watch 3 Idiots,0,TRUE,movies
+Watch your favorite Series/Trilogy/Saga,0,TRUE,movies
+Try out a new show,0,TRUE,movies
+Go to the nearest drive-in movie theater,8,FALSE,movies
+Go to the mall and shop at your favorite stores,100,FALSE,clothing
+Tiedye a shirt,10,FALSE,clothing
+Check out Zara for its newest deals ,50,TRUE,clothing
+Do a fashion show with the clothes from your wardrobe,0,TRUE,clothing
+Try matching Purple and black clothing to make a new outfit,0,TRUE,clothing
+Run a marathon in a  tuxedo,500,FALSE,clothing
+Create your favorite beach outfit,0,TRUE,clothing
+Create your favorite summer outfit,0,TRUE,clothing
+Create your favorite autumn outfit,0,TRUE,clothing
+Create your favorite winter outfit,0,TRUE,clothing
+Create your favorite spring outfit,0,TRUE,clothing
+Buy a new style of clothing and decide if you like it,100,FALSE,clothing
+Get a membership at your local gym,30,FALSE,exercise
+Complete a quick 15-minute workout you find online,0,TRUE,exercise
+Buy and install a doorframe pullup bar ,25,FALSE,exercise
+Try out a calisthenics workout at home,0,TRUE,exercise
+Go for a 30-minute run stating and ending at your house,0,TRUE,exercise
+"Research weightlifting and test your baseline weight/strength for each major exercise (bench, squat, deadlift, lunge, curls, etc.)",30,FALSE,exercise
+Go for a 30 minute bike ride,0,TRUE,exercise
+Begin training for a marathon,0,TRUE,exercise
+Research the proper diet and nutrition you need for your personal workout goals,0,TRUE,exercise
+Get a friend to o to the gym with you,30,FALSE,exercise
+"Start training to do a pullup, then muscle-up, then one arm pullup",0,TRUE,exercise
+"Go for a run, however run it at your race pace",0,FALSE,exercise

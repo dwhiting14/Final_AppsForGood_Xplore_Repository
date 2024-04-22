@@ -7,13 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.content.SharedPreferences;
-import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -24,6 +21,11 @@ import com.example.appforgood.Activity;
 import com.example.appforgood.R;
 import com.example.appforgood.databinding.FragmentHomeBinding;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -94,10 +96,35 @@ public class HomeFragment extends Fragment {
         activities.add(new Activity("Check out Zara for its newest deals",50,true,"clothing"));
         activities.add(new Activity("Do a fashion show with the clothes from your wardrobe",0,true,"clothing"));
 
+        /*
+
+
+        InputStream is = getResources().openRawResource(R.raw.ActivityDatabase);
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(is, Charset.forName("UTF-8"))
+        );
+
+        String line = "";
+        try {
+            while ((line=reader.readLine()) != null){
+                String[] act = line.split(",");
+                Activity current = new Activity();
+            }
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+        */
+
+
+
+
+
+
+
+
         ArrayList preferences = new ArrayList();
 
-
-        //homeswitch = (Switch) findViewById(R.id.switch1);
 
         Switch homeswitch = (Switch) root.findViewById(R.id.switch1);
 
@@ -123,11 +150,11 @@ public class HomeFragment extends Fragment {
         Boolean wantMusic = sp.getBoolean("music",false);
         Boolean wantFood = sp.getBoolean("food",false);
         Boolean wantSports = sp.getBoolean("sports",false);
-
-
+        Boolean wantMovies = sp.getBoolean("movies",false);
+        Boolean wantClothing = sp.getBoolean("clothing",false);
 
         //Find button
-        Button btn = root.findViewById(R.id.clickforidea);
+        Button btn = root.findViewById(R.id.submitFeedback);
         //Set button behavior
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,6 +173,10 @@ public class HomeFragment extends Fragment {
                 if (wantMusic) preferences.add("music");
                 if (wantFood) preferences.add("food");
                 if (wantSports) preferences.add("sports");
+                if (wantMovies) preferences.add("movies");
+                if (wantClothing) preferences.add("clothing");
+
+
 
 
                 //Check against all the user inputted preferences
@@ -155,7 +186,8 @@ public class HomeFragment extends Fragment {
 
                     if (    activities.get(activitiesIndex).getAtHome() == wantAtHome
                             &&
-                            preferences.contains(activities.get(activitiesIndex).getCategory())
+                            (preferences.contains(activities.get(activitiesIndex).getCategory())
+                                    || (!wantNature&&!wantMusic&&!wantFood&&!wantSports&&!wantMovies&&!wantClothing))
                             &&
                             activities.get(activitiesIndex).getCost()<=mPrice
                         )
