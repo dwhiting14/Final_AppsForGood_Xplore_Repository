@@ -84,4 +84,15 @@
         android:text="Clothing"
         app:layout_constraintStart_toEndOf="@+id/moviesCheck"
         app:layout_constraintTop_toBottomOf="@+id/sportsCheck" />
+
+    <Button
+        android:id="@+id/savepref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

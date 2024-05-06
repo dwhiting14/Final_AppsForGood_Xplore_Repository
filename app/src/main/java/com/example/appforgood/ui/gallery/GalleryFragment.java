@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
@@ -33,18 +34,43 @@ public class GalleryFragment extends Fragment {
         final TextView textView = binding.textGallery;
         galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-
-
         CheckBox natureCheck = (CheckBox) root.findViewById(R.id.natureCheck);
         CheckBox musicCheck = (CheckBox) root.findViewById(R.id.musicCheck);
         CheckBox foodCheck = (CheckBox) root.findViewById(R.id.foodCheck);
         CheckBox sportsCheck = (CheckBox) root.findViewById(R.id.sportsCheck);
         CheckBox moviesCheck = (CheckBox) root.findViewById(R.id.moviesCheck);
         CheckBox clothingCheck = (CheckBox) root.findViewById(R.id.clothingCheck);
-
+        Button savepref  = root.findViewById(R.id.savepref);
 
         SharedPreferences sp = getActivity().getSharedPreferences("UserPref", Context.MODE_PRIVATE);
+        Boolean wantNature = sp.getBoolean("nature",false);
+        Boolean wantMusic = sp.getBoolean("music",false);
+        Boolean wantFood = sp.getBoolean("food",false);
+        Boolean wantSports = sp.getBoolean("sports",false);
+        Boolean wantMovies = sp.getBoolean("movies",false);
+        Boolean wantClothing = sp.getBoolean("clothing",false);
+        natureCheck.setChecked(wantNature);
+        musicCheck.setChecked(wantMusic);
+        foodCheck.setChecked(wantFood);
+        sportsCheck.setChecked(wantSports);
+        moviesCheck.setChecked(wantMovies);
+        clothingCheck.setChecked(wantClothing);
 
+        SharedPreferences.Editor editor = sp.edit();
+        savepref.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putBoolean("nature",natureCheck.isChecked());
+                editor.putBoolean("music",musicCheck.isChecked());
+                editor.putBoolean("food",foodCheck.isChecked());
+                editor.putBoolean("sports",sportsCheck.isChecked());
+                editor.putBoolean("movies",moviesCheck.isChecked());
+                editor.putBoolean("clothing",clothingCheck.isChecked());
+                editor.apply();
+            }
+        });
+
+        /*
         natureCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -53,6 +79,7 @@ public class GalleryFragment extends Fragment {
                 editor.apply();
             }
         });
+
 
         musicCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -99,6 +126,8 @@ public class GalleryFragment extends Fragment {
             }
         });
 
+
+         */
         return root;
     }
 

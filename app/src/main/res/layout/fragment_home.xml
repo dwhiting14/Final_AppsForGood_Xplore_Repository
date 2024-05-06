@@ -8,11 +8,17 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="487dp"
-        android:layout_height="810dp"
+        android:layout_width="593dp"
+        android:layout_height="962dp"
+        android:layout_marginTop="-100dp"
+        android:layout_marginBottom="-50dp"
         android:src="@drawable/screen_shot_2024_04_17_at_10_48_57_am"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049" />
 
     <TextView
         android:id="@+id/textView2"
@@ -128,25 +134,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_home" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="63dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="68dp"
-        android:src="@drawable/navigation2"
+    <ImageButton
+        android:id="@+id/dislike"
+        android:clickable="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:src="@drawable/thumbsdown2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <Button
+        android:id="@+id/cleardislikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#0F5132"
+        android:text="Clear Dislikes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="407dp"
-        android:layout_height="188dp"
-        android:layout_marginTop="188dp"
-        android:src="@drawable/ratingscale"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
