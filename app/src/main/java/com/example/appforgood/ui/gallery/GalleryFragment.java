@@ -40,6 +40,9 @@ public class GalleryFragment extends Fragment {
         CheckBox sportsCheck = (CheckBox) root.findViewById(R.id.sportsCheck);
         CheckBox moviesCheck = (CheckBox) root.findViewById(R.id.moviesCheck);
         CheckBox clothingCheck = (CheckBox) root.findViewById(R.id.clothingCheck);
+        CheckBox exerciseCheck = (CheckBox) root.findViewById(R.id.exerciseCheck);
+        CheckBox artCheck = (CheckBox) root.findViewById(R.id.artCheck);
+
         Button savepref  = root.findViewById(R.id.savepref);
 
         SharedPreferences sp = getActivity().getSharedPreferences("UserPref", Context.MODE_PRIVATE);
@@ -49,6 +52,9 @@ public class GalleryFragment extends Fragment {
         Boolean wantSports = sp.getBoolean("sports",false);
         Boolean wantMovies = sp.getBoolean("movies",false);
         Boolean wantClothing = sp.getBoolean("clothing",false);
+        Boolean wantExercise = sp.getBoolean("exercise",false);
+        Boolean wantArt = sp.getBoolean("art",false);
+
         natureCheck.setChecked(wantNature);
         musicCheck.setChecked(wantMusic);
         foodCheck.setChecked(wantFood);
@@ -66,6 +72,8 @@ public class GalleryFragment extends Fragment {
                 editor.putBoolean("sports",sportsCheck.isChecked());
                 editor.putBoolean("movies",moviesCheck.isChecked());
                 editor.putBoolean("clothing",clothingCheck.isChecked());
+                editor.putBoolean("exercise",exerciseCheck.isChecked());
+                editor.putBoolean("art",artCheck.isChecked());
                 editor.apply();
             }
         });

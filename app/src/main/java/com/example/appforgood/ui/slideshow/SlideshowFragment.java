@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,18 +28,10 @@ public class SlideshowFragment extends Fragment {
         binding = FragmentSlideshowBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-
-        Button submitFeedback = root.findViewById(R.id.submitFeedback);
-        submitFeedback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
+        WebView webView = root.findViewById(R.id.webview);
+        webView.getSettings().setJavaScriptEnabled(true); // Enable JavaScript for form functionality
+        webView.loadUrl("https://docs.google.com/forms/d/e/1FAIpQLScMByTNBLgYQvSwG0eKTXwKhtu47llffyLKAQEGTcGWY46FKQ/viewform?usp=sf_link");
 
 
 

@@ -2,97 +2,341 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="800dp"
+    android:layout_height="1340dp"
     tools:context=".ui.gallery.GalleryFragment">
 
-    <TextView
-        android:id="@+id/text_gallery"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="605dp"
+        android:layout_height="1051dp"
+        android:src="@drawable/screen_shot_2024_04_17_at_10_48_57_am"
+        android:translationY="-50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.138"
-        android:text="Check Which Categories You Are Interested In"
-        />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <CheckBox
-        android:id="@+id/natureCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="236dp"
-        android:text="Nature"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/musicCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="236dp"
-        android:text="Music"
+    <TextView
+        android:id="@+id/text_gallery"
+        android:layout_width="598dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:text="What are you interested in?"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toEndOf="@+id/natureCheck"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/foodCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="104dp"
-        android:text="Food"
+    <ImageView
+        android:id="@+id/natureImage"
+        android:layout_width="269dp"
+        android:layout_height="194dp"
+        android:layout_marginStart="32dp"
+        android:src="@drawable/screen_shot_2024_04_29_at_10_28_50_am_removebg_preview"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/natureCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/text_gallery" />
+
+    <ImageView
+        android:id="@+id/musicImage"
+        android:layout_width="258dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/screen_shot_2024_04_29_at_10_37_04_am_removebg_preview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/natureImage"
+        app:layout_constraintTop_toBottomOf="@+id/text_gallery" />
+
+    <ImageView
+        android:id="@+id/foodImage"
+        android:layout_width="268dp"
+        android:layout_height="181dp"
+        android:layout_marginStart="32dp"
+        android:src="@drawable/screen_shot_2024_04_29_at_10_37_11_am_removebg_preview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/natureImage" />
+
+    <ImageView
+        android:id="@+id/sportsImage"
+        android:layout_width="256dp"
+        android:layout_height="180dp"
+        android:layout_marginEnd="232dp"
+        android:src="@drawable/screen_shot_2024_04_29_at_10_37_32_am_removebg_preview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/musicImage" />
+
+    <ImageView
+        android:id="@+id/moviesImage"
+        android:layout_width="266dp"
+        android:layout_height="188dp"
+        android:layout_marginStart="32dp"
+        android:src="@drawable/screen_shot_2024_04_29_at_10_37_37_am_removebg_preview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodImage" />
+
+    <ImageView
+        android:id="@+id/clothingImage"
+        android:layout_width="260dp"
+        android:layout_height="189dp"
+        android:layout_marginEnd="228dp"
+        android:src="@drawable/screen_shot_2024_04_29_at_10_38_00_am_removebg_preview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sportsImage" />
+
+    <ImageView
+        android:id="@+id/excerciseImage"
+        android:layout_width="266dp"
+        android:layout_height="189dp"
+        android:layout_marginStart="32dp"
+        android:src="@drawable/screen_shot_2024_05_06_at_9_34_26_am_removebg_preview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moviesImage" />
+
+    <ImageView
+        android:id="@+id/artImage"
+        android:layout_width="271dp"
+        android:layout_height="194dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/screen_shot_2024_05_06_at_9_34_37_am_removebg_preview"
+        app:layout_constraintStart_toEndOf="@+id/excerciseImage"
+        app:layout_constraintTop_toBottomOf="@+id/clothingImage" />
 
     <CheckBox
         android:id="@+id/sportsCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="104dp"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="36dp"
+        android:buttonTint="#FFFFFF"
+        android:scaleX="2"
+        android:scaleY="2"
         android:text="Sports"
-        app:layout_constraintStart_toEndOf="@+id/foodCheck"
-        app:layout_constraintTop_toBottomOf="@+id/musicCheck" />
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/sportsImage"
+        app:layout_constraintTop_toTopOf="@+id/sportsImage" />
+
+    <CheckBox
+        android:id="@+id/natureCheck"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="40dp"
+        android:buttonTint="#FFFFFF"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Nature"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:buttonIconTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/natureImage"
+        app:layout_constraintTop_toTopOf="@+id/natureImage" />
+
+    <CheckBox
+        android:id="@+id/foodCheck"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="36dp"
+        android:buttonTint="#FFFFFF"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Food"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/foodImage"
+        app:layout_constraintTop_toTopOf="@+id/foodImage" />
+
+    <CheckBox
+        android:id="@+id/musicCheck"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="40dp"
+        android:buttonTint="#FFFFFF"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Music"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/natureImage"
+        app:layout_constraintTop_toTopOf="@+id/musicImage" />
 
     <CheckBox
         android:id="@+id/moviesCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="32dp"
+        android:buttonTint="#FFFFFF"
+        android:scaleX="2"
+        android:scaleY="2"
         android:text="Movies"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodCheck" />
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/moviesImage"
+        app:layout_constraintTop_toBottomOf="@+id/foodImage" />
 
     <CheckBox
         android:id="@+id/clothingCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="167dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="32dp"
+        android:buttonTint="#FFFFFF"
+        android:scaleX="2"
+        android:scaleY="2"
         android:text="Clothing"
-        app:layout_constraintStart_toEndOf="@+id/moviesCheck"
-        app:layout_constraintTop_toBottomOf="@+id/sportsCheck" />
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/clothingImage"
+        app:layout_constraintTop_toTopOf="@+id/clothingImage" />
+
+    <CheckBox
+        android:id="@+id/exerciseCheck"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="28dp"
+        android:buttonTint="#FFFFFF"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Exercise"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/excerciseImage"
+        app:layout_constraintTop_toBottomOf="@+id/moviesImage" />
+
+    <CheckBox
+        android:id="@+id/artCheck"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="32dp"
+        android:buttonTint="#FFFFFF"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Art"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/artImage"
+        app:layout_constraintTop_toTopOf="@+id/artImage" />
 
     <Button
         android:id="@+id/savepref"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="244dp"
+        android:layout_marginBottom="196dp"
+        android:backgroundTint="#0F5132"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Save"
+        app:iconTint="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/natureText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="80dp"
+        android:text="Examples: \n-Hiking \n-Picnics \n-Birdwatching "
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/natureImage"
+        app:layout_constraintTop_toTopOf="@+id/natureImage" />
+
+    <TextView
+        android:id="@+id/musicText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="80dp"
+        android:text="Examples: \n-Concerts \n-Spotify \n-Karaoke "
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/musicImage"
+        app:layout_constraintTop_toTopOf="@+id/musicImage" />
+
+    <TextView
+        android:id="@+id/foodText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="76dp"
+        android:text="Examples: \n-Go out to eat \n-Order Pizza \n-Bake cookies"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/foodImage"
+        app:layout_constraintTop_toBottomOf="@+id/natureImage" />
+
+    <TextView
+        android:id="@+id/sportsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="80dp"
+        android:text="Examples: \n-Basketball \n-Ping Pong \n-NBA 2K25 "
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/sportsImage"
+        app:layout_constraintTop_toBottomOf="@+id/musicImage" />
+
+    <TextView
+        android:id="@+id/moviesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="72dp"
+        android:text="Examples: \n-Movie Theater \n-Watch a Thriller \n-Watch “3 Idiots”"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/moviesImage"
+        app:layout_constraintTop_toBottomOf="@+id/foodImage" />
+
+    <TextView
+        android:id="@+id/clothingText"
+        android:layout_width="142dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="76dp"
+        android:text="Examples: \n-Go to mall \n-Check out Zara’s newest deals \n-Tie dye a shirt"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/clothingImage"
+        app:layout_constraintTop_toBottomOf="@+id/sportsImage" />
+
+    <TextView
+        android:id="@+id/exerciseText"
+        android:layout_width="109dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="68dp"
+        android:text="Examples: \n-Do 12 pullups\n-15-min workout \n-Do 30 pushups"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/excerciseImage"
+        app:layout_constraintTop_toBottomOf="@+id/moviesImage" />
+
+    <TextView
+        android:id="@+id/artText"
+        android:layout_width="124dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="72dp"
+        android:text="Examples: \n-Draw self-portrait \n-Make a sculpture \n-Study romantic art"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/artImage"
+        app:layout_constraintTop_toBottomOf="@+id/clothingImage" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

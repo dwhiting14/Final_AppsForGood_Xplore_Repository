@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -45,7 +46,7 @@ public class HomeFragment extends Fragment {
 
         final Controller aController = (Controller) getContext().getApplicationContext();
 
-        aController.populate();
+        aController.readData();
 
         Switch homeswitch = (Switch) root.findViewById(R.id.switch1);
         SeekBar priceRange = (SeekBar)root.findViewById(R.id.priceRange);
@@ -74,6 +75,10 @@ public class HomeFragment extends Fragment {
         Boolean wantSports = sp.getBoolean("sports",false);
         Boolean wantMovies = sp.getBoolean("movies",false);
         Boolean wantClothing = sp.getBoolean("clothing",false);
+        Boolean wantExercise = sp.getBoolean("exercise",false);
+        Boolean wantArt = sp.getBoolean("art",false);
+
+        ImageView img =root.findViewById(R.id.imageView4);
 
         //Find button
         Button btn = root.findViewById(R.id.clickforidea);
@@ -82,26 +87,29 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.i("firstapp", "CLICKED - GIVE IDEA");
-
-                boolean wantAtHome = homeswitch.isChecked();
-                int mPrice= priceRange.getProgress();
-
-                Activity generated = aController.getActivity(wantAtHome, mPrice, wantNature, wantMusic, wantFood, wantSports, wantMovies, wantClothing);
-
                 TextView display = root.findViewById(R.id.text_home);
-                String displayAtHome = "This activity is not at home";
-                if (generated.getAtHome()){
-                    displayAtHome = "This activity is at home";
-                }
-                display.setText(
-                        generated.getName() + "\n" + "Price = $" + generated.getCost() + "\n" + displayAtHome + "\n" + "Category: " + generated.getCategory());
+                boolean wantAtHome = homeswitch.isChecked();
+                int mPrice = priceRange.getProgress();
+
+                    Activity generated = aController.getActivity(wantAtHome, mPrice, wantNature, wantMusic, wantFood, wantSports, wantMovies, wantClothing,wantExercise,wantArt);
+
+                    String displayAtHome = "This activity is not at home";
+                    if (generated.getAtHome()) {
+                        displayAtHome = "This activity is at home";
+                    }
+                    display.setText(
+                            generated.getName() + "\n" + "Price = $" + generated.getCost() + "\n" + displayAtHome + "\n" + "Category: " + generated.getCategory());
+
+                    int imageResource = getResources().getIdentifier(generated.getPic(), "drawable", getActivity().getPackageName());
+                    img.setImageResource(imageResource);
 
             }
+
 
         });
 
 
-        ImageButton dislike = root.findViewById(R.id.dislike);
+        Button dislike = root.findViewById(R.id.dislike);
         dislike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
