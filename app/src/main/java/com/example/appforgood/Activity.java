@@ -19,23 +19,30 @@ public class Activity {
         pic = inputPic;
     }
     //Methods
+    //Return: name
     public String getName() {
         return name;
     }
 
+    //Return: cost
     public double getCost() {
         return cost;
     }
 
+    //Return: atHome
     public boolean getAtHome() {
         return atHome;
     }
 
+    //Return: category in lowercase
     public String getCategory() {
         return category.toLowerCase(Locale.ROOT);
     }
 
-    public String getPic() {return pic;}
+    //return: pictire
+    public String getPic() {
+        return pic;
+    }
 
 
 }
