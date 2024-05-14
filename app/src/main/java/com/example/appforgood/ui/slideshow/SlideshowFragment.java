@@ -28,7 +28,7 @@ public class SlideshowFragment extends Fragment {
         binding = FragmentSlideshowBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-
+        //Loads a webview link to a google form for feedback
         WebView webView = root.findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true); // Enable JavaScript for form functionality
         webView.loadUrl("https://docs.google.com/forms/d/e/1FAIpQLScMByTNBLgYQvSwG0eKTXwKhtu47llffyLKAQEGTcGWY46FKQ/viewform?usp=sf_link");

@@ -29,11 +29,11 @@ public class GalleryFragment extends Fragment {
 
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        //View root = inflater.inflate(R.layout.GalleryFragment, container, false);
 
         final TextView textView = binding.textGallery;
         galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
+        //initializes each checkbox
         CheckBox natureCheck = (CheckBox) root.findViewById(R.id.natureCheck);
         CheckBox musicCheck = (CheckBox) root.findViewById(R.id.musicCheck);
         CheckBox foodCheck = (CheckBox) root.findViewById(R.id.foodCheck);
@@ -45,6 +45,7 @@ public class GalleryFragment extends Fragment {
 
         Button savepref  = root.findViewById(R.id.savepref);
 
+        //assigns a boolean for
         SharedPreferences sp = getActivity().getSharedPreferences("UserPref", Context.MODE_PRIVATE);
         Boolean wantNature = sp.getBoolean("nature",false);
         Boolean wantMusic = sp.getBoolean("music",false);
@@ -55,14 +56,18 @@ public class GalleryFragment extends Fragment {
         Boolean wantExercise = sp.getBoolean("exercise",false);
         Boolean wantArt = sp.getBoolean("art",false);
 
+        //sets the checkboxes to the last saved preference when the app is opened
         natureCheck.setChecked(wantNature);
         musicCheck.setChecked(wantMusic);
         foodCheck.setChecked(wantFood);
         sportsCheck.setChecked(wantSports);
         moviesCheck.setChecked(wantMovies);
         clothingCheck.setChecked(wantClothing);
+        exerciseCheck.setChecked(wantExercise);
+        artCheck.setChecked(wantArt);
 
         SharedPreferences.Editor editor = sp.edit();
+        //saves the preferences when the save button is checked
         savepref.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

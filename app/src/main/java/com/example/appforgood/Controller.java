@@ -13,12 +13,24 @@ import java.util.Random;
 
 public class Controller extends Application {
 
+    //Initializes Data: an array of activities, an array of preferences, and an array of dislikes. It also sets an initial index of the activites array
     ArrayList<Activity> activities = new ArrayList<>();
     ArrayList preferences = new ArrayList();
     ArrayList dislikes = new ArrayList();
     int activitiesIndex = -1;
     int counter = -1;
 
+    //PARAM: if the user wants to stay at home or not
+    //PARAM: The user's max price
+    //PARAM: If the user likes nature activities
+    //PARAM: If the user likes music activities
+    //PARAM: If the user likes food activities
+    //PARAM: If the user likes sports activities
+    //PARAM: If the user likes movie activities
+    //PARAM: If the user likes clothing activities
+    //PARAM: If the user likes exercise activities
+    //PARAM: If the user likes art activities
+    //RETURNS: an object of the activity class that matches the user inputted parameters
     public Activity getActivity (boolean wantAtHome, double mprice, boolean wantNature, boolean wantMusic, boolean wantFood, boolean wantSports, boolean wantMovies, boolean wantClothing, boolean wantExercise, boolean wantArt){
         Random r = new Random();
         boolean checkAct = false;
@@ -34,12 +46,13 @@ public class Controller extends Application {
         if (wantExercise) preferences.add("exercise");
         if (wantArt) preferences.add("art");
 
+        //checks to see if at least one activity fits their parameter
         Log.d("findme",preferences.toString());
         Boolean somethingWorks = false;
         for (int index = 0; index <activities.size(); index++){
             if (    activities.get(index).getAtHome() == wantAtHome
                     &&
-                    (preferences.contains(activities.get(index).getCategory()) || (!wantNature&&!wantMusic&&!wantFood&&!wantSports&&!wantMovies&&!wantClothing))
+                    (preferences.contains(activities.get(index).getCategory()) || (!wantNature&&!wantMusic&&!wantFood&&!wantSports&&!wantMovies&&!wantClothing&&!wantExercise&&!wantArt))
                     &&
                     activities.get(index).getCost()<=mprice
                     &&
@@ -55,7 +68,7 @@ public class Controller extends Application {
                 String bool = String.valueOf(preferences.contains(activities.get(activitiesIndex).getCategory()));
                 if (    activities.get(activitiesIndex).getAtHome() == wantAtHome
                         &&
-                        (preferences.contains(activities.get(activitiesIndex).getCategory()) || (!wantNature&&!wantMusic&&!wantFood&&!wantSports&&!wantMovies&&!wantClothing))
+                        (preferences.contains(activities.get(activitiesIndex).getCategory()) || (!wantNature&&!wantMusic&&!wantFood&&!wantSports&&!wantMovies&&!wantClothing&&!wantExercise&&!wantArt))
                         &&
                         activities.get(activitiesIndex).getCost()<=mprice
                         &&
@@ -78,10 +91,12 @@ public class Controller extends Application {
         }
     }
 
+    //clears the preferences array
     public void clearPref(){
         preferences.clear();
     }
 
+    //adds the last generated activty to the dislike array even if there is a duplicate
     public void addDislike(){
         int currentI=activitiesIndex;
         for (int index = 0; index<activities.size(); index++){
@@ -89,11 +104,12 @@ public class Controller extends Application {
         }
 
     }
-
+    //clears the dislike array
     public void clearDislike(){
         dislikes.clear();
     }
 
+    //Reads the CSV file appdata and adds each line as a new object of the activity class to the activity array
     public void readData() {
         Log.d("readdata","data read");
 

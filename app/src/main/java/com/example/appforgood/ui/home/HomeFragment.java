@@ -51,8 +51,9 @@ public class HomeFragment extends Fragment {
         Switch homeswitch = (Switch) root.findViewById(R.id.switch1);
         SeekBar priceRange = (SeekBar)root.findViewById(R.id.priceRange);
         TextView displayPrice = (TextView)root.findViewById(R.id.displayPrice);
+        int maxPrice= priceRange.getProgress();
 
-        int maxPrice= priceRange.getProgress(); //DOES NOT WORK
+        //reassigns the text to whatever the current progress of the slider is whenever it is moved
         priceRange.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -66,8 +67,7 @@ public class HomeFragment extends Fragment {
 
         ArrayList dislikes = new ArrayList<>();
 
-
-        //SharedPreferences sp = getApplicationContext().getSharedPreferences("NaturePref", Context.MODE_PRIVATE);
+        //gets the prefrences of the user from the shared preferences
         SharedPreferences sp = getActivity().getSharedPreferences("UserPref", Context.MODE_PRIVATE);
         Boolean wantNature = sp.getBoolean("nature",false);
         Boolean wantMusic = sp.getBoolean("music",false);
@@ -104,12 +104,11 @@ public class HomeFragment extends Fragment {
                     img.setImageResource(imageResource);
 
             }
-
-
         });
 
 
         Button dislike = root.findViewById(R.id.dislike);
+        //calls the addDislike method of the controller class to add dislike when button pressed
         dislike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,6 +117,7 @@ public class HomeFragment extends Fragment {
         });
 
         Button cleardislikes = root.findViewById(R.id.cleardislikes);
+        //calls the clearDislike method of the controller class to clear dislikes when button pressed
         cleardislikes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,8 +125,6 @@ public class HomeFragment extends Fragment {
             }
         });
         return root;
-
-
     }
 
     @Override
